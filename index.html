@@ -91,6 +91,11 @@
       align-items: center;
       justify-content: space-between;
       gap: 1.5rem;
+      flex-wrap: wrap; /* 讓品牌與導覽在小螢幕換行，避免水平超出 */
+    }
+
+    .nav > * {
+      min-width: 0; /* 防止 flex 子項過度撐開容器 */
     }
 
     .nav-brand {
@@ -110,6 +115,7 @@
       flex-wrap: wrap;
       gap: 0.5rem;
       justify-content: flex-end;
+      flex: 1 1 100%; /* 在小螢幕佔滿一列，讓按鈕在第二行排版 */
     }
 
     .nav-link {
@@ -414,6 +420,7 @@
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.7);
       background-color: transparent;
+      word-break: break-all; /* 防止長網址在小螢幕造成水平捲動 */
     }
 
     .project-link:hover {
@@ -453,6 +460,7 @@
 
     .contact-link {
       font-size: 0.95rem;
+      word-break: break-all; /* 防止 Email / URL 在小螢幕橫向超出 */
     }
 
     .contact-link:hover {
@@ -478,6 +486,10 @@
 
       .nav-brand {
         font-size: 1.05rem;
+      }
+
+      .nav-links {
+        flex: 0 0 auto; /* 在大螢幕回到一般橫向排版 */
       }
 
       .section {
